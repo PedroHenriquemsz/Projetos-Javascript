@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastro de Contêiners</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <h1 id="titulo">Cadastro de Contêiners</h1>
+        <img class="cabecalho-imagem" src="guindaste-de-conteiner.png" alt="logo conteiner">
+    </header>
+
+    <div>
+        <br>
+        <p id="subtitulo">Complete as informações</p>
+        <br>
+    </div>
+
+    <form>
+
+        <fieldset class="grupo">
+
+        <div class="campo">
+            <label for="cliente"><strong>cliente</strong></label>
+            <input type="text" name="cliente" id="cliente" required>
+        </div>
+
+        <div class="campo">
+            <label for="numeroconteiner"><strong>Numero do conteiner</strong></label>
+            <input type="text" name="numeroconteiner" id="numeroconteiner" required>
+
+        </div>
+
+        <div class="campo">
+            <label for="tipoc"><strong>Tipo conteiner</strong></label>
+            <select name="tipoc" id="tipoc">
+            <option selected disabled value="">Selecione</option>
+            <option value="20">Vinte</option>
+            <option value="40">quarenta</option>
+        </select>
+        </div>
+
+        <div class="campo">
+            <label for="stats"><strong>Status</strong></label>
+            <select name="stats" id="stats">
+                <option selected disabled value="">Selecione</option>
+                <option value="cheio">Cheio</option>
+                <option value="vazio">Vazio</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label for="categoria"><strong>categoria</strong></label>
+            <select name="categoria" id="categoria">
+                <option selected disabled value="">Selecione</option>
+                <option value="Importação">Importação</option>
+                <option value="Exportação">Exportação</option>
+            </select>
+        </div>
+    </fieldset>
+    <br>
+    <br>
+
+         <h2 titulo-movimmentacao> <strong>Movimentação</strong></h2>
+      <br>
+
+      <fieldset class="grupo">
+          <div class="campo">
+              <label for="tipomovimentacao"><strong>Tipo Movimentação</strong></label>
+              <select name="tipomovimentacao" id="tipomovimentacao">
+                  <option selected disabled value=""></option>
+                  <option value="embarque">embarque</option>
+                  <option value="descarga">descarga</option>
+                  <option value="gate in">gate in</option>
+                  <option value="gate out">gate out</option>
+                  <option value="pesagem">pesagem</option>
+                  <option value="scanner">scanner</option>
+              </select>
+          </div>
+
+          <div class="campo">
+              <label for="datainicio">Data inicio</label>
+              <input type="date" name="datainicio" id="datainicio">
+          </div>
+
+          <div class="campo">
+            <label for="datafim">Data Fim</label>
+            <input type="date" name="datafim" id="datafim">
+          </div>
+
+      </fieldset>
+    </form>
+
+    <button class="botao" id="btenviar" type="submit" onclick="cadConteiner(cliente.value, numeroconteiner.value, tipoc.value, stats.value , categoria.value, tipomovimentacao.value, datainicio.value, datafim.value )">Inserir</button>
+<br>
+<br>
+
+    <section class="table">
+        <table class="table" id="tabela">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Cliente</th>
+                    <th>Nº Conteiner</th>
+                    <th>Tipo Contêiner</th>
+                    <th>Status</th>
+                    <th>Categoria</th>
+                    <th>tipo Movimentação</th>
+                    <th>data inicio</th>
+                    <th>data Fim</th>
+                </tr>
+            </thead>
+
+            <tbody id="tbody">
+
+            </tbody>
+
+        </table>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
