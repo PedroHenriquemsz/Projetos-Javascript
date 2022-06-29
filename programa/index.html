@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastro de Contêiners</title>
+</head>
+<body>
+
+    <header class="cabecalho">
+        <h1 id="titulo">Cadastro de Contêiners</h1>
+        <img class="cabecalho-imagem" src="guindaste-de-conteiner.png" alt="Logo conteiner" >
+      </header>
+
+    <div>
+        <br>
+        <p id="subtitulo">Complete as informações</p>
+        <br>
+    </div>
+    
+    <form autocomplete="off">
+
+        <fieldset class="grupo">
+
+            <div class="campo">
+                <label for="cliente"><strong>Cliente</strong></label>
+                <input type="text" name="cliente" id="cliente" required>
+            </div>
+
+            <div class="campo">
+                <label for="Numero do conteiner"><strong>Numero do conteiner</strong></label>
+                <input type="text" name="numeroconteiner" id="numeroconteiner" required>
+
+            </div>
+
+            <div class="campo">
+                <label for="tipoc"><strong>Tipo conteiner</strong></label>
+                <select id="tipoc" required>
+                  <option selected disabled value="">Selecione</option>
+                  <option value="20">vinte</option>
+                  <option value="40">quarenta</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="stats"><strong>Status</strong></label>
+                <select id="stats" required>
+                  <option selected disabled value="">Selecione</option>
+                  <option value="cheio">Cheio</option>
+                  <option value="vazio">Vazio</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="categoria"><strong>Categoria</strong></label>
+                <select id="categoria" required>
+                  <option selected disabled value="">Selecione</option>
+                  <option value="importacao">Importação</option>
+                  <option value="exportacao">Exportação</option>
+                  
+                </select>
+            </div>
+
+        </fieldset>
+ <br>
+ <br>
+ <br>
+        <h2 class="titulo-movimentacao"><strong>Movimentação</strong></h2>
+
+        <br>
+
+        <fieldset class="grupo">
+            <div class="campo">
+                <label for="tipomovimentacao"><strong>Tipo de Movimentação</strong></label>
+                <select id="tipomovimentacao" required>
+                  <option selected disabled value="">Selecione</option>
+                  <option value="embarque">embarque</option>
+                  <option value="descarga">descarga</option>
+                  <option value="gate-in">gate in</option>
+                  <option value="gate-out">gate out</option>
+                  <option value="reposicionamento">reposicionamento</option>
+                  <option value="pesagem">pesagem</option>
+                  <option value="scanner">scanner</option>
+                </select>
+
+                <div class="campo">
+                    <label for="datainicio"><strong>Data inicial</strong></label>
+                    <input type="date" name="datainicio" id="datainicio" required>
+                </div>
+
+                <div class="campo">
+                    <label for="datafim"> <strong> Data Final</strong></label>
+                    <input type="date" name="datafim" id="datafim" required>
+                </div>
+               
+            </div>
+        </fieldset>
+
+    </form>
+   <button class="botao" id="btenviar" type="submit" onclick="cadConteiner(cliente.value, numeroconteiner.value, tipoc.value, stats.value , categoria.value, tipomovimentacao.value, datainicio.value, datafim.value )">Inserir</button> 
+<br>
+<br>
+    <section class="table">
+        <table class="table" id="tabela">
+            <thead>
+              <tr>
+                  <th>Código</th>
+                <th>Cliente</th>
+                <th>Nº Container</th>
+                <th>Tipo conteiner</th>
+                <th>Status</th>
+                <th>Categoria</th>
+                <th>Tipo movimentação</th>
+                <th>Data: Inicio</th>
+                <th>Data: Final</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+          </table>
+
+    </section>
+     <script src="tableToExcel.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
